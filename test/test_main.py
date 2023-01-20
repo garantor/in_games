@@ -44,11 +44,19 @@ class TestStringCalculator(unittest.TestCase):
         _test_result =self.main_class.Add('1,2,,5,100,1001')
         self.assertEqual(_test_result, 108)
 
+    def test_6(self):
+        _test_result = self.main_class.Add('//;\n1;2')
+        self.assertTrue(_test_result == 3)
 
-        
-        
+    def test_7(self):
+        _test =self.main_class.Add('//[***]\n1***2***3')
+        self.assertEqual(_test, 6)
 
-        
+
+    def test_8(self):
+        _test =self.main_class.Add('//[*][%]\n1*2%3')
+        self.assertEqual(_test, 6)
+
 
 
 
